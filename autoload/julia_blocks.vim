@@ -786,7 +786,7 @@ function julia_blocks#select_reset()
 endfunction
 
 function! s:cursor_moved(...)
-  if b:jlblk_inwrapper && !(a:0 > 0 && a:1)
+  if exists("b:jlblk_inwrapper") && !(a:0 > 0 && a:1)
     return
   endif
   let b:jlblk_did_select = b:jlblk_doing_select
